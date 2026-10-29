@@ -258,9 +258,19 @@
       <div class="ruot">
         <!-- ✉️ VIẾT THƯ Ở ĐÂY:
              Mỗi đoạn thư là một thẻ <p class="loi"> ... </p>.
-             Khi viết thư thật, xoá chữ "placeholder" trong class
-             để chữ hết nghiêng và hết nhạt. -->
-        <p class="loi placeholder">Chỗ này là thư con viết cho Mẹ — con sẽ viết vào sau.</p>
+             Ba link thiệp tốt nghiệp có sẵn ?m=<ngày sinh> ở cuối,
+             nên bấm vào là mở ngay, không phải nhập ngày sinh. -->
+        <p class="loi">Hình như ngần ấy năm, chưa lần nào con viết cho Mẹ một lời chúc sinh nhật cho đàng hoàng. Năm nay dù sao con cũng đã đến tuổi trưởng thành, nên con dành ra ít thời gian tự tay thiết kế tấm thiệp này, cũng là để Mẹ thấy những gì con có thể làm từ ngày theo học ngành này. Con chúc Mẹ có một ngày sinh nhật thật vui vẻ, thật hạnh phúc.</p>
+        <p class="loi">Quà thì con cũng chẳng biết nên tặng Mẹ gì, nên thôi thì thế này: giờ con đã bắt đầu đi làm, có lương, mỗi tháng con sẽ gửi Mẹ 4,5 triệu, còn 10 triệu thì con tự chi tiêu. Số tiền ấy Mẹ muốn dùng vào việc gì cũng được. Cũng đã đến lúc con nên sống bằng chính đồng tiền mình làm ra.</p>
+        <p class="loi">Còn nữa, chắc Ba, Mẹ và Đạt vẫn chưa đọc những gì con viết trong thiệp tốt nghiệp, nên con để sẵn đường link ở đây để mọi người vào đọc:</p>
+        <p class="loi lien-ket">
+          <a href="https://bia3334.github.io/graduation/guests/me.html?m=30101975" target="_blank" rel="noopener">Thiệp gửi Mẹ</a>
+          <a href="https://bia3334.github.io/graduation/guests/ba.html?m=01011973" target="_blank" rel="noopener">Thiệp gửi Ba</a>
+          <a href="https://bia3334.github.io/graduation/guests/dat.html?m=07042007" target="_blank" rel="noopener">Thiệp gửi Đạt</a>
+        </p>
+        <p class="loi">À, con với Nghi cũng chia tay rồi. Không có vấn đề gì đâu, con chỉ báo để Mẹ biết vậy thôi, Mẹ cũng đừng hỏi gì thêm.</p>
+        <p class="loi">Nói tới nói lui, rốt cuộc vẫn nên khép lại bằng câu quan trọng nhất:</p>
+        <p class="loi ket">Chúc mừng sinh nhật Mẹ,<br>con yêu Mẹ.</p>
       </div>
     </div>
   </section>
@@ -472,6 +482,18 @@
   .loi { margin: 0 0 1em; font-size: clamp(1.12rem, 3.6vw, 1.25rem); line-height: 1.8; }
   .loi:last-child { margin-bottom: 0; }
   .loi.placeholder { font-style: italic; color: var(--muc-nhat); }
+  .lien-ket { display: flex; flex-wrap: wrap; gap: 10px; }
+  .lien-ket a {
+    padding: .3em 1.1em;
+    border: 1.5px solid var(--hong); border-radius: 999px;
+    font-size: 1.05rem; line-height: 1.5; color: var(--hong-dam); text-decoration: none;
+  }
+  .lien-ket a:hover { background: #FCEBEE; }
+  .ket {
+    margin-top: 1.3em;
+    font-family: var(--viet-tay); font-size: clamp(2rem, 8vw, 2.5rem); line-height: 1.25;
+    color: var(--hong-dam); text-align: center;
+  }
   .bia {
     position: absolute; inset: 0; z-index: 2;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;

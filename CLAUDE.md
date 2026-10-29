@@ -13,6 +13,9 @@ Live at https://bia3334.github.io/sinh-nhat-me/ — GitHub Pages from `main` roo
 - **The letter** (`✉️ VIẾT THƯ Ở ĐÂY`) is in the owner's plain voice: no invented
   memories, metaphors or feelings. Mẹ is a quân nhân (Thượng tá); the voice is con–Mẹ,
   warm and respectful.
+- The letter links to the graduation pages of Mẹ / Ba / Đạt with `?m=<ddmmyyyy>`
+  (30101975, 01011973, 07042007) so they open in letter mode — one tap "Mở xem", no DOB
+  typing. If a DOB changes in `graduation/guests/*.html`, update these links.
 - Flow: dark room, candle-lit cake → "Thổi nến" button / tap the cake / blow into the mic
   → candles out, smoke, a beat of darkness → lights on: flowers burst from the cake,
   bunting, balloons, music-box birthday tune (Web Audio, unlocked inside the click), and
