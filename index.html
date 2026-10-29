@@ -21,7 +21,7 @@
    muốn sửa câu nào thì tìm đúng câu đó và gõ đè lên.
 
    • Thư gửi Mẹ: tìm dòng "✉️ VIẾT THƯ Ở ĐÂY".
-   • Bật/tắt nhạc và pháo giấy: sửa trong khối CÀI ĐẶT ngay dưới.
+   • Bật/tắt nhạc và hoa bay: sửa trong khối CÀI ĐẶT ngay dưới.
    • Khối <style> phông chữ ở CUỐI file là dữ liệu nhúng — ĐỪNG SỬA.
 
    Mở thử: bấm đúp vào index.html là chạy, không cần mạng.
@@ -30,14 +30,14 @@
 <!-- ── CÀI ĐẶT ─────────────────────────────────────────────── -->
 <script>
   const NHAC = true;        // true: sau khi thổi nến sẽ phát bài chúc mừng sinh nhật kiểu hộp nhạc
-  const PHAO_GIAY = true;   // true: bắn pháo giấy lúc đèn bật sáng
+  const HOA_BAY = true;     // true: hoa bay ra lúc đèn bật sáng và lúc mở thiệp
   const MIC_DANG_NGHE = 'Con đang nghe nè, Mẹ thổi mạnh vào điện thoại nha…';
   const MIC_LOI = 'Không mở được micro rồi, Mẹ bấm nút “Thổi nến” nha.';
 </script>
 
 <!-- bóng tối của căn phòng tắt đèn (chỉ là hiệu ứng) -->
 <div class="phong-toi" aria-hidden="true"><div class="ho"></div><div class="dac"></div><div class="anh-nen"></div></div>
-<canvas id="phao-giay" aria-hidden="true"></canvas>
+<canvas id="hoa-bay" aria-hidden="true"></canvas>
 
 <main>
   <!-- ═══ CẢNH MỞ: bánh kem trong phòng tối ═══ -->
@@ -201,6 +201,39 @@
       </div>
       <a class="xuong" href="#thu">Con có thư cho Mẹ <span aria-hidden="true">↓</span></a>
     </div>
+
+    <!-- chú mèo cam chạy lon ton dưới chân màn hình — chạm vào thì đứng lại kêu meo -->
+    <button class="meo" id="meo" type="button" aria-label="Chú mèo cam, chạm vào để nghe kêu meo">
+      <span class="meo-noi" aria-hidden="true">Meo meo~</span>
+      <span class="meo-quay" aria-hidden="true">
+        <svg viewBox="0 0 110 76">
+          <ellipse cx="54" cy="73" rx="30" ry="3" fill="#5A2818" opacity=".14"/>
+          <g class="than-meo">
+            <g transform="translate(36,46)"><g class="cx b"><rect x="-4.5" width="9" height="24" rx="4.5" fill="#E08E45"/><ellipse cx=".5" cy="23" rx="5.5" ry="3" fill="#F3DFC6"/></g></g>
+            <g transform="translate(72,46)"><g class="cx a"><rect x="-4.5" width="9" height="24" rx="4.5" fill="#E08E45"/><ellipse cx=".5" cy="23" rx="5.5" ry="3" fill="#F3DFC6"/></g></g>
+            <g class="duoi">
+              <path d="M28,40 C15,38 10,26 15,14" fill="none" stroke="#F2A65A" stroke-width="7.5" stroke-linecap="round"/>
+              <path d="M28,40 C15,38 10,26 15,14" fill="none" stroke="#D9823A" stroke-width="7.5" stroke-dasharray="2.5 6"/>
+            </g>
+            <ellipse cx="52" cy="40" rx="27" ry="14" fill="#F2A65A"/>
+            <ellipse cx="55" cy="48" rx="17" ry="5.5" fill="#FFF1DE"/>
+            <g fill="none" stroke="#D9823A" stroke-width="2.6" stroke-linecap="round"><path d="M38,29 q3,5 1,10"/><path d="M47,27 q3,5 1,10"/><path d="M56,27 q3,5 1,9"/></g>
+            <g transform="translate(30,46)"><g class="cx a"><rect x="-4.5" width="9" height="24" rx="4.5" fill="#F2A65A"/><ellipse cx=".5" cy="23" rx="5.5" ry="3" fill="#FFF7EE"/></g></g>
+            <g transform="translate(66,46)"><g class="cx b"><rect x="-4.5" width="9" height="24" rx="4.5" fill="#F2A65A"/><ellipse cx=".5" cy="23" rx="5.5" ry="3" fill="#FFF7EE"/></g></g>
+            <path d="M68,18 L70,3 L80,12 Z M83,11 L94,2 L95,18 Z" fill="#F2A65A"/>
+            <path d="M70.5,15 L71.5,7 L77,12 Z M86,11 L92,6 L92.5,15 Z" fill="#F49AA8"/>
+            <circle cx="80" cy="26" r="15" fill="#F2A65A"/>
+            <path d="M76,12.5 l.6,4.5 M80.5,11.5 l.3,4.5" fill="none" stroke="#D9823A" stroke-width="2.2" stroke-linecap="round"/>
+            <ellipse cx="88" cy="31" rx="7.5" ry="5.5" fill="#FFF1DE"/>
+            <ellipse cx="76" cy="31" rx="3.2" ry="2" fill="#F49AA8" opacity=".7"/>
+            <path d="M80,24 q3,-3.2 6,0" fill="none" stroke="#3B2420" stroke-width="2" stroke-linecap="round"/>
+            <path d="M93,26.5 L97,26.5 L95,29 Z" fill="#E7788B"/>
+            <path d="M95,29 q-1,3 -4,2.6" fill="none" stroke="#3B2420" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M91,31 L106,28.5 M91,33 L106,34" stroke="#B8875E" stroke-width=".9" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </span>
+    </button>
   </section>
 
   <!-- ═══ THIỆP GẬP: bìa tự lật lên khi cuộn tới ═══ -->
@@ -305,7 +338,7 @@
   .tat .dac { opacity: 1; }
   .sang .phong-toi { opacity: 0; }
 
-  #phao-giay { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
+  #hoa-bay { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
 
   /* ── cảnh mở ── */
   .dau {
@@ -466,6 +499,48 @@
     font-size: 1.05rem; color: var(--hong-dam);
   }
 
+  /* ── chú mèo chạy lon ton — chỉ ra khi đèn sáng ── */
+  .meo {
+    --w: clamp(72px, 20vw, 110px);
+    position: absolute; z-index: 2; left: 2%; bottom: 10px;
+    width: var(--w);
+    padding: 0; border: 0; background: none;
+    opacity: 0; visibility: hidden;
+  }
+  .meo-quay, .meo svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .sang .meo {
+    opacity: 1; visibility: visible;
+    transition: opacity .8s ease 1.8s;
+    animation: di-meo 15s linear 1.8s infinite;
+  }
+  .sang .meo-quay { animation: quay-meo 15s linear 1.8s infinite; }
+  @keyframes di-meo { 50% { left: calc(98% - var(--w)); } }
+  @keyframes quay-meo { 0%, 49.9% { transform: none; } 50%, 100% { transform: scaleX(-1); } }
+  .cx { transform-box: fill-box; transform-origin: 50% 0; }
+  .sang .cx { animation: buoc .3s ease-in-out infinite alternate; }
+  .sang .cx.b { animation-delay: -.3s; }
+  @keyframes buoc { from { transform: rotate(22deg); } to { transform: rotate(-22deg); } }
+  .sang .than-meo { animation: nhun-meo .15s ease-in-out infinite alternate; }
+  @keyframes nhun-meo { to { transform: translateY(-2.5px); } }
+  .duoi { transform-box: view-box; transform-origin: 28px 40px; animation: vay .9s ease-in-out infinite alternate; }
+  @keyframes vay { from { transform: rotate(-8deg); } to { transform: rotate(14deg); } }
+  .meo-noi {
+    position: absolute; left: 50%; bottom: 100%;
+    padding: .1em .75em;
+    background: #fff; color: var(--hong-dam);
+    border-radius: 999px; box-shadow: 0 4px 14px rgba(90, 40, 30, .15);
+    font-style: italic; font-size: 1rem; white-space: nowrap;
+    opacity: 0; transform: translate(-50%, 6px) scale(.6);
+    transition: opacity .2s ease, transform .25s cubic-bezier(.3, 1.6, .5, 1);
+    pointer-events: none;
+  }
+  /* chạm vào mèo: đứng lại, nhảy một cái, kêu meo */
+  .sang .meo.noi, .sang .meo.noi .meo-quay { animation-play-state: paused; }
+  .sang .meo.noi .cx, .sang .meo.noi .than-meo { animation: none; }
+  .meo.noi svg { animation: hop-meo .45s ease-out; }
+  @keyframes hop-meo { 40% { transform: translateY(-12px); } }
+  .meo.noi .meo-noi { opacity: 1; transform: translate(-50%, -6px) scale(1); }
+
   /* màn hình thấp (điện thoại nhỏ, xoay ngang): thu bánh lại để nút thổi không bị khuất */
   @media (max-height: 700px) {
     .dau { padding-bottom: 16px; }
@@ -520,7 +595,7 @@
     setTimeout(function () {
       goc.classList.remove('toi', 'tat');
       goc.classList.add('sang');
-      phaoGiay();
+      hoaBay(document.getElementById('banh'), 150);
       hat();
     }, 1600);
   }
@@ -554,37 +629,61 @@
     }
   }
 
-  // pháo giấy bắn lên từ chiếc bánh
-  function phaoGiay() {
-    if (!PHAO_GIAY || giam) return;
-    const c = document.getElementById('phao-giay'), g = c.getContext('2d');
-    const dpr = Math.min(devicePixelRatio || 1, 2), W = innerWidth, H = innerHeight;
-    c.width = W * dpr; c.height = H * dpr;
-    g.scale(dpr, dpr);
-    const r = document.getElementById('banh').getBoundingClientRect();
-    const ox = r.left + r.width / 2, oy = r.top + r.height * .3;
-    const mau = ['#D9617A', '#F2A0B0', '#D4A24C', '#F3D27A', '#8BAA82', '#E8798A'];
-    const ds = Array.from({ length: 170 }, function () {
-      const a = -Math.PI / 2 + (Math.random() - .5) * 2.3, v = 6 + Math.random() * 10;
-      return { x: ox, y: oy, vx: Math.cos(a) * v, vy: Math.sin(a) * v,
-        w: 5 + Math.random() * 6, h: 3 + Math.random() * 4, q: Math.random() * 6,
-        vq: (Math.random() - .5) * .3, m: mau[Math.random() * mau.length | 0], tron: Math.random() < .25 };
-    });
-    (function ve() {
-      g.clearRect(0, 0, W, H);
-      let con = 0;
-      for (const d of ds) {
-        d.vx *= .975; d.vy = d.vy * .975 + .12;
-        d.x += d.vx + Math.sin(d.q) * .6; d.y += d.vy; d.q += d.vq;
-        if (d.y > H + 20) continue;
-        con++;
-        g.save(); g.translate(d.x, d.y); g.rotate(d.q); g.fillStyle = d.m;
-        if (d.tron) { g.beginPath(); g.arc(0, 0, d.h / 1.4, 0, 7); g.fill(); }
-        else { g.scale(1, Math.cos(d.q * 2)); g.fillRect(-d.w / 2, -d.h / 2, d.w, d.h); }
-        g.restore();
+  // hoa bay ra (hoa năm cánh + cánh hoa lẻ), mọi lần bay dùng chung một lớp vẽ
+  const cv = document.getElementById('hoa-bay'), gv = cv.getContext('2d');
+  const anhHoa = [['#F2A0B0', '#F3C77A'], ['#E8798A', '#FFE3A3'], ['#FFF7F2', '#F3C77A'],
+    ['#F7B98B', '#FFF1C9'], ['#D9617A', '#F6D27A'], ['#D7BDE2', '#FFF1C9']].map(function (m) {
+    const c = document.createElement('canvas'), g = c.getContext('2d');
+    c.width = c.height = 48;
+    g.translate(24, 24);
+    g.fillStyle = m[0]; g.strokeStyle = 'rgba(150, 60, 80, .28)'; g.lineWidth = 1.2;
+    for (let k = 0; k < 5; k++) {
+      g.rotate(Math.PI * 2 / 5);
+      g.beginPath(); g.ellipse(0, -11, 7, 11, 0, 0, Math.PI * 2); g.fill(); g.stroke();
+    }
+    g.fillStyle = m[1];
+    g.beginPath(); g.arc(0, 0, 5, 0, Math.PI * 2); g.fill();
+    return c;
+  });
+  const mauCanh = ['#F2A0B0', '#E8798A', '#FFE9EC', '#F7B98B', '#D7BDE2'];
+  let hoa = [], dangVe = false;
+
+  function hoaBay(nguon, so) {
+    if (!HOA_BAY || giam) return;
+    const r = nguon.getBoundingClientRect();
+    const ox = r.left + r.width / 2, oy = r.top + Math.min(r.height * .3, 120);
+    for (let i = 0; i < so; i++) {
+      const a = -Math.PI / 2 + (Math.random() - .5) * 2.4, v = 4 + Math.random() * 9;
+      hoa.push({ x: ox + (Math.random() - .5) * 40, y: oy, vx: Math.cos(a) * v, vy: Math.sin(a) * v,
+        q: Math.random() * 6, vq: (Math.random() - .5) * .12, lac: Math.random() * 6, s: 14 + Math.random() * 16,
+        anh: Math.random() < .65 ? anhHoa[Math.random() * anhHoa.length | 0] : null,
+        mau: mauCanh[Math.random() * mauCanh.length | 0] });
+    }
+    if (dangVe) return;
+    dangVe = true;
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = innerWidth * dpr; cv.height = innerHeight * dpr;
+    gv.setTransform(dpr, 0, 0, dpr, 0, 0);
+    requestAnimationFrame(ve);
+  }
+
+  function ve() {
+    const W = innerWidth, H = innerHeight;
+    gv.clearRect(0, 0, W, H);
+    hoa = hoa.filter(function (d) { return d.y < H + 40; });
+    for (const d of hoa) {
+      d.vx *= .97; d.vy = d.vy * .97 + .06;   // rơi chậm, lả lướt
+      d.lac += .05;
+      d.x += d.vx + Math.sin(d.lac) * .7; d.y += d.vy; d.q += d.vq;
+      gv.save(); gv.translate(d.x, d.y); gv.rotate(d.q);
+      if (d.anh) gv.drawImage(d.anh, -d.s / 2, -d.s / 2, d.s, d.s);
+      else {
+        gv.scale(1, Math.cos(d.lac)); gv.fillStyle = d.mau;
+        gv.beginPath(); gv.ellipse(0, 0, d.s * .2, d.s * .34, 0, 0, Math.PI * 2); gv.fill();
       }
-      if (con) requestAnimationFrame(ve);
-    })();
+      gv.restore();
+    }
+    if (hoa.length) requestAnimationFrame(ve); else dangVe = false;
   }
 
   // thổi thật vào micro: tiếng gió mạnh liên tục một chút là tắt nến
@@ -634,12 +733,27 @@
   document.getElementById('nut-mic').addEventListener('click', ngheThoi);
   document.getElementById('thap-lai').addEventListener('click', thapLai);
   document.getElementById('banh').addEventListener('click', function () {
-    if (goc.classList.contains('sang')) phaoGiay(); else thoi();
+    if (goc.classList.contains('sang')) hoaBay(this, 50); else thoi();
+  });
+
+  // chạm vào mèo: đứng lại kêu meo một chút rồi chạy tiếp
+  const meo = document.getElementById('meo');
+  let henMeo;
+  meo.addEventListener('click', function () {
+    meo.classList.remove('noi');
+    void meo.offsetWidth;   // cho cú nhảy chạy lại từ đầu
+    meo.classList.add('noi');
+    clearTimeout(henMeo);
+    henMeo = setTimeout(function () { meo.classList.remove('noi'); }, 1800);
   });
 
   // bìa thiệp tự lật lên khi cuộn tới
   const thiep = document.getElementById('thiep');
-  const moThiep = function () { thiep.classList.add('mo'); };
+  const moThiep = function () {
+    if (thiep.classList.contains('mo')) return;
+    thiep.classList.add('mo');
+    setTimeout(function () { hoaBay(thiep, 70); }, 600);   // hoa bay ra lúc bìa đang lật
+  };
   thiep.querySelector('.bia').addEventListener('click', moThiep);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (ds, ob) {

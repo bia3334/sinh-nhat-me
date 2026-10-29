@@ -5,7 +5,7 @@ Live at https://bia3334.github.io/sinh-nhat-me/ — GitHub Pages from `main` roo
 `git push origin main` = deploy.
 
 - **Vietnamese only.** Every visible word is hardcoded in the markup so the owner edits
-  it in place. The `CÀI ĐẶT` script block holds only what JS needs (`NHAC`, `PHAO_GIAY`,
+  it in place. The `CÀI ĐẶT` script block holds only what JS needs (`NHAC`, `HOA_BAY`,
   the two mic status strings). Fonts (Great Vibes + Alegreya, latin + vietnamese
   subsets) are base64 in the bottom `<style>` — don't touch.
 - **The owner hand-edits `index.html`.** Make targeted edits only; never regenerate or
@@ -14,11 +14,14 @@ Live at https://bia3334.github.io/sinh-nhat-me/ — GitHub Pages from `main` roo
   memories, metaphors or feelings. Mẹ is a quân nhân (Thượng tá); the voice is con–Mẹ,
   warm and respectful.
 - Flow: dark room, candle-lit cake → "Thổi nến" button / tap the cake / blow into the mic
-  → candles out, smoke, a beat of darkness → lights on: confetti, bunting, balloons,
-  music-box birthday tune (Web Audio, unlocked inside the click) → scroll: the folded
-  card's cover flips up to reveal the letter. "Thắp nến lại" replays it.
+  → candles out, smoke, a beat of darkness → lights on: flowers burst from the cake,
+  bunting, balloons, music-box birthday tune (Web Audio, unlocked inside the click), and
+  an orange tabby trots back and forth along the bottom (tap → stops, hops, "Meo meo~")
+  → scroll: the folded card's cover flips up, more flowers fly out, letter revealed.
+  "Thắp nến lại" replays it. Mẹ likes cats and flowers — the owner asked for both.
 - `anh-xem-truoc.png` is the `og:image` (1200×630, lit hero) for the Zalo/Messenger
   link preview.
 - Check visually with Chrome headless before shipping. Headless doesn't advance CSS
   transitions or `requestAnimationFrame`, so force the end state by injecting
-  `class="thoi sang"` on `<html>` plus `*{transition:none!important}`.
+  `class="thoi sang"` on `<html>` plus `*{transition:none!important}`; to see the flowers
+  fly, stub `requestAnimationFrame` with a 16 ms `setTimeout` before the page script.
