@@ -1,0 +1,24 @@
+# Thiệp sinh nhật Mẹ — rules for AI agents
+
+One self-contained page, `index.html`, for the owner's mother's birthday (30/10/2026).
+Live at https://bia3334.github.io/sinh-nhat-me/ — GitHub Pages from `main` root, so
+`git push origin main` = deploy.
+
+- **Vietnamese only.** Every visible word is hardcoded in the markup so the owner edits
+  it in place. The `CÀI ĐẶT` script block holds only what JS needs (`NHAC`, `PHAO_GIAY`,
+  the two mic status strings). Fonts (Great Vibes + Alegreya, latin + vietnamese
+  subsets) are base64 in the bottom `<style>` — don't touch.
+- **The owner hand-edits `index.html`.** Make targeted edits only; never regenerate or
+  overwrite the file wholesale.
+- **The letter** (`✉️ VIẾT THƯ Ở ĐÂY`) is in the owner's plain voice: no invented
+  memories, metaphors or feelings. Mẹ is a quân nhân (Thượng tá); the voice is con–Mẹ,
+  warm and respectful.
+- Flow: dark room, candle-lit cake → "Thổi nến" button / tap the cake / blow into the mic
+  → candles out, smoke, a beat of darkness → lights on: confetti, bunting, balloons,
+  music-box birthday tune (Web Audio, unlocked inside the click) → scroll: the folded
+  card's cover flips up to reveal the letter. "Thắp nến lại" replays it.
+- `anh-xem-truoc.png` is the `og:image` (1200×630, lit hero) for the Zalo/Messenger
+  link preview.
+- Check visually with Chrome headless before shipping. Headless doesn't advance CSS
+  transitions or `requestAnimationFrame`, so force the end state by injecting
+  `class="thoi sang"` on `<html>` plus `*{transition:none!important}`.
